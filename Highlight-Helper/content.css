@@ -1,0 +1,41 @@
+/* Reading Highlighter - page highlight CSS (corrected)
+   Set <html data-rh-mode="dark|light"> and tag elements with data-rh="link|heading|text|image|emphasis|list|quote|button". */
+:root, :root[data-rh-mode="dark"] {
+  --rh-link: #22d3ee;
+  --rh-heading: #fbbf24;
+  --rh-text: #a78bfa;
+  --rh-image: #a3e635;
+  --rh-emphasis: #f472b6;
+  --rh-list: #22d3ee;
+  --rh-quote: #f472b6;
+  --rh-button: #a78bfa;
+}
+:root[data-rh-mode="light"] {
+  --rh-link: #1d4ed8;
+  --rh-heading: #c2410c;
+  --rh-text: #6d28d9;
+  --rh-image: #15803d;
+  --rh-emphasis: #be185d;
+  --rh-list: #1d4ed8;
+  --rh-quote: #be185d;
+  --rh-button: #6d28d9;
+}
+
+:where([data-rh]){transition:background-color 120ms ease,box-shadow 120ms ease,color 120ms ease,outline-color 120ms ease}
+:where([data-rh]:not([data-rh="image"])){border-radius:3px}
+[data-rh="link"]{background-color:color-mix(in srgb,var(--rh-link) 18%,transparent)!important;color:var(--rh-link)!important;box-shadow:0 0 0 2px color-mix(in srgb,var(--rh-link) 18%,transparent)!important;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+@media (hover:hover){[data-rh="link"]:hover{background-color:color-mix(in srgb,var(--rh-link) 30%,transparent)!important;box-shadow:0 0 0 2px color-mix(in srgb,var(--rh-link) 35%,transparent)!important}}
+:root[data-rh-mode="dark"] [data-rh="link"]{text-shadow:0 0 7px color-mix(in srgb,var(--rh-link) 55%,transparent)}
+[data-rh="heading"]{background-color:color-mix(in srgb,var(--rh-heading) 14%,transparent)!important;color:var(--rh-heading)!important;box-shadow:-4px 0 0 color-mix(in srgb,var(--rh-heading) 80%,transparent)!important;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+:root[data-rh-mode="dark"] [data-rh="heading"]{text-shadow:0 0 7px color-mix(in srgb,var(--rh-heading) 55%,transparent)}
+[data-rh="text"]{background-color:color-mix(in srgb,var(--rh-text) 8%,transparent)!important;box-shadow:-3px 0 0 color-mix(in srgb,var(--rh-text) 55%,transparent)!important;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+[data-rh="image"]{outline:3px solid var(--rh-image)!important;outline-offset:1px!important;box-shadow:0 0 14px color-mix(in srgb,var(--rh-image) 55%,transparent)!important}
+[data-rh="emphasis"]{background-color:color-mix(in srgb,var(--rh-emphasis) 18%,transparent)!important;color:var(--rh-emphasis)!important;box-shadow:0 0 0 2px color-mix(in srgb,var(--rh-emphasis) 18%,transparent)!important;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+@media (hover:hover){[data-rh="emphasis"]:hover{background-color:color-mix(in srgb,var(--rh-emphasis) 30%,transparent)!important;box-shadow:0 0 0 2px color-mix(in srgb,var(--rh-emphasis) 35%,transparent)!important}}
+:root[data-rh-mode="dark"] [data-rh="emphasis"]{text-shadow:0 0 7px color-mix(in srgb,var(--rh-emphasis) 55%,transparent)}
+[data-rh="list"]{background-color:color-mix(in srgb,var(--rh-list) 11%,transparent)!important;box-shadow:-3px 0 0 color-mix(in srgb,var(--rh-list) 55%,transparent)!important;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+[data-rh="quote"]{background-color:color-mix(in srgb,var(--rh-quote) 11%,transparent)!important;box-shadow:-3px 0 0 color-mix(in srgb,var(--rh-quote) 55%,transparent)!important;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+[data-rh="button"]{background-color:color-mix(in srgb,var(--rh-button) 18%,transparent)!important;color:var(--rh-button)!important;box-shadow:0 0 0 2px color-mix(in srgb,var(--rh-button) 18%,transparent)!important;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+@media (hover:hover){[data-rh="button"]:hover{background-color:color-mix(in srgb,var(--rh-button) 30%,transparent)!important;box-shadow:0 0 0 2px color-mix(in srgb,var(--rh-button) 35%,transparent)!important}}
+:root[data-rh-mode="dark"] [data-rh="button"]{text-shadow:0 0 7px color-mix(in srgb,var(--rh-button) 55%,transparent)}
+[data-rh="link"]{text-decoration:underline!important;text-decoration-color:var(--rh-link)!important;text-decoration-thickness:1px!important;text-underline-offset:2px!important}
